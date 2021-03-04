@@ -1,6 +1,6 @@
-import { Component, OnInit, ɵɵhostProperty } from '@angular/core';
-import { Country } from 'src/app/interfazes/pais-interface';
+import { Component, OnInit } from '@angular/core';
 import { PaisService } from '../../services/pais.service';
+import { Coutry } from '../../interfaces/pais.interface';
 
 @Component({
   selector: 'app-por-pais',
@@ -9,25 +9,31 @@ import { PaisService } from '../../services/pais.service';
   ]
 })
 export class PorPaisComponent {
-  hayError: Boolean = false;
-  termino: string = '';
-  paises: Country[] = [];
-  constructor(private paisService: PaisService) { }
 
+  hayError: Boolean= false;
+  paises: Coutry[]=[];
 
+ termino:string='';
+ constructor(private PaisService:PaisService){
+  
 
-  buscar() {
+ }
+ buscar(termino:string){ 
 
-    this.hayError = false;
+  this.hayError=false;
+  this.termino=termino;
 
-    console.log(this.termino);
-    this.paisService.buscarPais(this.termino).
-      subscribe(
-        (paises) => {
-        console.log(paises);
-      }, (err) => {
-        this.hayError=true;
-        this.paises = []
-      })
-  };
+this.hayError=false;
+   console.log(this.termino);
+   this.PaisService.buscarPais(this.termino).
+   
+   subscribe((paises)=>{console.log(paises);
+    this.paises=paises;
+  },(error)=>{
+     this.hayError=true;
+     this.paises=[];
+   })
+
+ }
+
 }

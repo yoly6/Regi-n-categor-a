@@ -1,1 +1,19 @@
-<p>por-region works!</p>
+<h2>Por Region</h2>
+
+<hr>
+<div class="row">
+    <div class="col-8">
+       <app-pais-input (onEnter)="buscar($event)"></app-pais-input>
+    </div>
+</div>
+<hr>
+<div class="col-8">
+<div *ngIf="hayError" class="alert alert-danger">
+    No se encontro 
+</div>
+</div>
+<div class="row">
+    <div class="col-8">
+        <app-region-tabla [regiones]="regiones"></app-region-tabla>
+    </div>
+</div>

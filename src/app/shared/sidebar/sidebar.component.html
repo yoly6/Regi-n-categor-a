@@ -1,14 +1,15 @@
-<h2>Busqueda</h2>
+<ul>
+    <h2>Busqueda</h2>
+</ul>
 <hr>
 <ul class="list-group">
-  <li routerLink="pais"  routerLinkActive="Active" class="list-group-item">
-  
-    Buscador por pais
-  </li>
-  <li routerLink="region" routerLinkActive="Active" class="list-group-item">
-    Buscador por Region
-  </li>
-  <li routerLink="capital" routerLinkActive="Active" class="list-group-item">
-    Buscador por Capital
-  </li>
+    <li routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  class="list-group-item">
+        Buscar por pais
+    </li>
+    <li routerLink="region" routerLinkActive="active" class="list-group-item">
+        Buscar por region
+    </li>
+    <li routerLink="capital" routerLinkActive="active" class="list-group-item">
+        Buscar por capital
+    </li>
 </ul>

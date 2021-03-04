@@ -1,4 +1,4 @@
-export interface Country {
+export interface Coutry {
     name:           string;
     topLevelDomain: string[];
     alpha2Code:     string;
@@ -41,8 +41,8 @@ export interface Language {
 export interface RegionalBloc {
     acronym:       string;
     name:          string;
-    otherAcronyms: any[];
-    otherNames:    any[];
+    otherAcronyms: string[];
+    otherNames:    string[];
 }
 
 export interface Translations {

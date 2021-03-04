@@ -1,0 +1,22 @@
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col" class="table-dark">#</th>
+            <th scope="col" class="table-dark">Bandera</th>
+            <th scope="col" class="table-dark">Nombre</th>
+            <th scope="col" class="table-dark">Población</th>
+            <th scope="col" class="table-dark"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of paises, let i = index">
+            <td class="table-secondary">{{i+1}}</td>
+            <td class="table-secondary"><img [src]="pais.flag" alt="no disponible" style="width: 75px; height: 75px;"/></td>
+            <td class="table-secondary">{{pais.name}}</td>
+            <td class="table-secondary">{{pais.population}}</td>
+            <td class="table-secondary">
+                <button type="button" class="btn btn-primary" [routerLink] = "['/pais', pais.alpha2Code]" >Ver mas</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
