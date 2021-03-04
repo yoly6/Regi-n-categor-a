@@ -1,0 +1,38 @@
+<h2>Por Pais</h2>
+<hr>
+<div class="row">
+    <div class="col-8">
+<form (ngSubmit)="buscar()">
+<input type="text" name="termino" [(ngModel)]="termino" class="form-control" placeholder="Buscar pais">
+</form>
+    </div>
+</div>
+<hr>
+<div *ngIf="!hayError" class="alert alert-danger col-8">
+no se encontro
+</div>
+<div class="row">
+    <div class="col">
+<table>
+    <thead>
+        <tr>
+            <th> #</th>
+            <th>Bandera</th>
+            <th>nombre</th>
+            <th>poblacion</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pais of paises, let i = index">
+            <td>{{i+1}}</td>
+            <td><img [src]="pais.flag" alt="no disponible" style="width: 30px; height: 20px;"/></td>
+            <td>{{pais.name}}</td>
+            <td>{{pais.population}}</td>
+            <td>
+                <a [routerLink] = "['/pais,paises.alpha2code']">ver...</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+    </div>
+</div>
